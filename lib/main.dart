@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:toonflix/widgets/button.dart';
 
 void main() {
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -110,12 +112,15 @@ class App extends StatelessWidget {
                 height: 20,
               ),
               Container(
+                //overflow 되면 어떤 동작 할건지 정해 줌.
+                clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
                     color: const Color(0xff1F2123),
                     borderRadius: BorderRadius.circular(25)),
                 child: Padding(
                   padding: const EdgeInsets.all(30),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -153,6 +158,17 @@ class App extends StatelessWidget {
                           )
                         ],
                       ),
+                      Transform.scale(
+                        scale: 2.2,
+                        child: Transform.translate(
+                          offset: const Offset(-5, 12),
+                          child: const Icon(
+                            Icons.euro_rounded,
+                            color: Colors.white,
+                            size: 88,
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ),
