@@ -119,26 +119,26 @@ class App extends StatelessWidget {
                   code: 'EUR',
                   icon: Icons.euro_rounded,
                   isInverted: false,
+                  order: 1,
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -20),
-                  child: const CurrencyCard(
-                    balance: '9,785',
-                    name: 'Bitcoin',
-                    code: 'BTC',
-                    icon: Icons.currency_bitcoin,
-                    isInverted: true,
-                  ),
+                // order 1 : 0 , order 2 : 20 , order 3 : 40
+
+                const CurrencyCard(
+                  balance: '9,785',
+                  name: 'Bitcoin',
+                  code: 'BTC',
+                  icon: Icons.currency_bitcoin,
+                  isInverted: true,
+                  order: 2,
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -40),
-                  child: const CurrencyCard(
-                    balance: '8,126',
-                    name: 'Dollar',
-                    code: 'USD',
-                    icon: Icons.attach_money_outlined,
-                    isInverted: false,
-                  ),
+
+                const CurrencyCard(
+                  balance: '8,126',
+                  name: 'Dollar',
+                  code: 'USD',
+                  icon: Icons.attach_money_outlined,
+                  isInverted: false,
+                  order: 3,
                 ),
               ], // 재사용 가능한 Widget 만들기
             ),
